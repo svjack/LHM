@@ -1,3 +1,43 @@
+```bash
+https://github.com/aigc3d/LHM
+
+conda activate system
+conda install python=3.10
+
+git clone https://github.com/aigc3d/LHM && cd LHM
+
+bash install_cu121.sh
+#pip install -r requirements.txt
+#pip install mmpose
+
+cd ./engine/pose_estimation
+pip install mmcv==1.3.9
+pip install -v -e third-party/ViTPose
+pip install ultralytics
+pip install "httpx[socks]"
+pip install flash_attn --no-build-isolation
+pip install -U gradio
+
+'''
+pip install "mmcv>=1.3.8,<=1.7.0" -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html
+pip install mmdet
+pip install mmpose==0.29.0
+
+pip install "mmcv>=1.3.8,<=1.7.0" -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html
+
+from mmpose.apis import get_track_id, init_pose_model, vis_pose_result
+from mmpose.apis.inference import batch_inference_pose_model
+'''
+
+LHM-500M-HF
+LHM-1B-HF
+
+wget https://virutalbuy-public.oss-cn-hangzhou.aliyuncs.com/share/aigc3d/data/LHM/motion_video.tar
+tar -xvf ./motion_video.tar
+
+python ./app_motion_ms.py  --model_name LHM-1B-HF
+```
+
 # <span><img src="./assets/LHM_logo_parsing.png" height="35" style="vertical-align: top;"> - Official PyTorch Implementation</span>
 
 #####  <p align="center"> [Lingteng Qiu<sup>*</sup>](https://lingtengqiu.github.io/), [Xiaodong Gu<sup>*</sup>](https://scholar.google.com.hk/citations?user=aJPO514AAAAJ&hl=zh-CN&oi=ao), [Peihao Li<sup>*</sup>](https://liphao99.github.io/), [Qi Zuo<sup>*</sup>](https://scholar.google.com/citations?user=UDnHe2IAAAAJ&hl=zh-CN), [Weichao Shen](https://scholar.google.com/citations?user=7gTmYHkAAAAJ&hl=zh-CN), [Junfei Zhang](https://scholar.google.com/citations?user=oJjasIEAAAAJ&hl=en), [Kejie Qiu](https://sites.google.com/site/kejieqiujack/home), [Weihao Yuan](https://weihao-yuan.com/)<br> [Guanying Chen<sup>+</sup>](https://guanyingc.github.io/), [Zilong Dong<sup>+</sup>](https://baike.baidu.com/item/%E8%91%A3%E5%AD%90%E9%BE%99/62931048), [Liefeng Bo](https://scholar.google.com/citations?user=FJwtMf0AAAAJ&hl=zh-CN)</p>
